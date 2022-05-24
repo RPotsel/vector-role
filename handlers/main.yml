@@ -1,13 +1,8 @@
 ---
 # handlers file for vector
-- name: restart vector
-  systemd:
+- name: start_vector
+  become: true
+  ansible.builtin.systemd:
     name: vector
-    state: restarted
-  when: vector_service_state != 'stopped'
-
-- name: reload vector
-  systemd:
-    name: vector
-    state: restart
-  when: vector_service_state != 'stopped'
+    state: started
+    daemon_reload: true

@@ -7,4 +7,4 @@
     owner: "{{ ansible_user_id }}"
     group: "{{ ansible_user_gid }}"
     validate: vector validate --no-environment --config-yaml %s
-  notify: restart vector
+  notify: start_vector
