@@ -1,4 +1,4 @@
-Role Name
+Vector
 =========
 
 Homework 08-ansible-04-role.
@@ -11,7 +11,7 @@ There are no requirements.
 Role Variables
 --------------
 
-There are no variables.
+Look at defaults/main.yml
 
 Dependencies
 ------------
@@ -21,16 +21,24 @@ There are no dependencies.
 Example Playbook
 ----------------
 
-    - hosts: servers
-      roles:
-         - rolename
+```YAML
+- name: Requirements for Vector
+  src: git@github.com:Rpotsel/vector-role.git
+  scm: git
+  version: "1.1"
+  name: vector
+
+- name: Install Vector
+  roles:
+    - vector
+```
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-Netology Student.
+Netology DevOps-14 Student.
