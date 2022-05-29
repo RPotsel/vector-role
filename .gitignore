@@ -1,0 +1,6 @@
+# Unit test
+.tox/
+
+# pyenv
+.python-version
+.travis.yml
